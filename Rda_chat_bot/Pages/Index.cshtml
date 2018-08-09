@@ -1,0 +1,16 @@
+﻿@page
+@model IndexModel
+@{
+	ViewData["Title"] = "Home page";
+}
+
+<div id="bot-window" />
+<script src="~/js/botchat.js"></script>
+<script>
+      BotChat.App({
+        directLine: { secret: 'r3V0WvtMTII.cwA.pAQ.VtAc54Dujng6NzEQhyDMiepjZaCDY20FbBnB0JG00V4' },
+        user: { id: 'Lee@rdacorp.com' },
+        bot: { id: 'rda_qna_bot' },
+        resize: 'detect'
+      }, document.getElementById("bot-window"));
+</script>
