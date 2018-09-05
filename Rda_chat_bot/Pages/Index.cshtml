@@ -3,14 +3,40 @@
 @{
 	ViewData["Title"] = "Home page";
 }
+<div id="bot-window-container" >
+	<div id="bot-window-sliding-div" onclick="chatWindowClicked();">
+		<div id="bot-icon-container">
+			<img id="bot-icon" src="~/images/bot_icon.png" />
+		</div>
 
-<div id="bot-window" />
+		<img id="rda-logo" src="~/images/rda_logo.png" />
+		<button id="closeBotButton" onclick="exitButtonClicked(event);"> x </button>
+
+
+		<div id="bot-icon-greeting-container">
+			<p id="bot-icon-greeting"> Hello!  I am a QnA bot.  Ask me a question</p>
+		</div>
+
+		<button style="position: absolute; left: -10000px;" autofocus>  </button>
+		@*the only point of this button is to prevent autofocusing on the chat's textinput (which seems to be default)*@
+
+		<div id="exampleQuestionPanel">
+			<button onclick="changeBotInputValue(event);"> Tell me about RDA </button>
+			<button onclick="changeBotInputValue(event);"> Tell me about your services </button>
+			<button onclick="changeBotInputValue(event);"> Build a digital roadmap </button>
+			<button onclick="changeBotInputValue(event);"> Schedule a time to chat </button>
+		</div>
+		<div id="bot-window" />
+	</div>
+</div>
+
 <script src="~/js/botchat.js"></script>
+<script src="~/js/site.js"></script>
 <script>
-      BotChat.App({
-        directLine: { secret: 'r3V0WvtMTII.cwA.pAQ.VtAc54Dujng6NzEQhyDMiepjZaCDY20FbBnB0JG00V4' },
-        user: { id: 'Lee@rdacorp.com' },
-        bot: { id: 'rda_qna_bot' },
-        resize: 'detect'
-      }, document.getElementById("bot-window"));
+	BotChat.App({
+		directLine: { secret: '266fPMQ_h8E.cwA.7Ig.ZG0o4Ts-HFJ6qFymWzqtk7VPa3KxHLYUpIaFuTsZK8M' },
+		user: { id: 'Lee@rdacorp.com' },
+		bot: { id: 'rda-chatbot' },
+		resize: 'detect'
+	}, document.getElementById("bot-window"));
 </script>

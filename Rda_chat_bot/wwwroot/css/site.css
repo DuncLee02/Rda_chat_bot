@@ -35,11 +35,3 @@ body {
         display: none;
     }
 }
-
-#bot-window {
-	height: 500px;
-	width: 400px;
-	position: absolute;
-	right: 20px;
-	bottom: 0px;
-}
