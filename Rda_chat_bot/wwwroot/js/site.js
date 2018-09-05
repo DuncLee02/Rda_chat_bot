@@ -36,6 +36,7 @@ function chatWindowClicked() {
 	}
 }
 
+
 function removeExampleQuestionPanel() {
 	$("#exampleQuestionPanel").hide();
 	$("#bot-icon-greeting").hide();
